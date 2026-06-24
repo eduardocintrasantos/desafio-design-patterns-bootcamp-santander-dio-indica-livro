@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indicações de Livros</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>📚 Indicações de Livros</h1>
+    <p>Busque na Google Books e registre suas recomendações</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Buscar livros</h2>
+      <form id="form-busca">
+        <div class="busca-opcoes">
+          <label><input type="radio" name="tipo" value="titulo" checked> Título</label>
+          <label><input type="radio" name="tipo" value="autor"> Autor</label>
+        </div>
+        <div class="busca-linha">
+          <input type="text" id="termo" placeholder="Digite o termo de busca..." required>
+          <button type="submit">Buscar</button>
+        </div>
+      </form>
+      <p id="msg-busca" class="msg"></p>
+      <div id="livros" class="livros-grid"></div>
+    </section>
+
+    <section class="card" id="secao-indicar" hidden>
+      <h2>Indicar livro</h2>
+      <div id="livro-selecionado" class="livro-preview"></div>
+      <form id="form-indicacao">
+        <input type="hidden" id="googleVolumeId">
+        <input type="hidden" id="titulo">
+        <input type="hidden" id="autor">
+        <input type="hidden" id="img">
+        <label>Seu nome
+          <input type="text" id="nome" required>
+        </label>
+        <label>Nota (1 a 5)
+          <select id="nota" required>
+            <option value="1">1 — Ruim</option>
+            <option value="2">2 — Regular</option>
+            <option value="3" selected>3 — Bom</option>
+            <option value="4">4 — Muito bom</option>
+            <option value="5">5 — Excelente</option>
+          </select>
+        </label>
+        <label>Motivo da indicação
+          <textarea id="motivo" rows="3" required placeholder="Por que você recomenda este livro?"></textarea>
+        </label>
+        <button type="submit">Salvar indicação</button>
+      </form>
+      <p id="msg-indicacao" class="msg"></p>
+    </section>
+
+    <section class="card">
+      <div class="secao-topo">
+        <h2>Indicações cadastradas</h2>
+        <button type="button" id="btn-atualizar" class="btn-secundario">Atualizar</button>
+      </div>
+      <p id="msg-lista" class="msg"></p>
+      <div id="indicacoes" class="indicacoes-lista"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
