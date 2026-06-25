@@ -5,6 +5,7 @@ WORKDIR /app
 COPY gradlew gradlew.bat settings.gradle build.gradle ./
 COPY gradle gradle
 COPY src src
+COPY frontend frontend
 
 RUN chmod +x gradlew && ./gradlew bootJar --no-daemon -x test
 
