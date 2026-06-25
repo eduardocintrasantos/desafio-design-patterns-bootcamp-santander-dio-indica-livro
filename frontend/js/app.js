@@ -1,4 +1,6 @@
-const API = "http://localhost:8080";
+const API = window.location.hostname === "localhost" && window.location.port !== "8080"
+  ? "http://localhost:8080"
+  : "";
 const $ = (id) => document.getElementById(id);
 
 const NOTAS = {
