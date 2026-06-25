@@ -25,16 +25,6 @@ Em `src/main/resources/application.properties`:
 google.books.api-key=SUA_CHAVE_AQUI
 ```
 
-### Deploy no Railway
-
-Não commite a chave no repositório. Configure a variável de ambiente:
-
-| Variável | Valor |
-|----------|-------|
-| `GOOGLE_BOOKS_API_KEY` | sua API key da Google Books |
-
-O Spring Boot mapeia automaticamente para `google.books.api-key`.
-
 ## 2. Subir a API (backend)
 
 Com o **Docker Desktop aberto**, na raiz do projeto:
